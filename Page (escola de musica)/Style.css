@@ -1,0 +1,293 @@
+/* zerando as variaveis padrão do navegador */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    /* deixando o scroll mais lento */
+    scroll-padding-top: 9rem;
+    /* unica forma que conseguir de fazer o scrolling do parar antes 
+    do menu cobrir parte do texto */
+}
+
+
+/* Definindo cores base */
+:root {
+    --primary-color: rgb(222, 220, 220);
+    --secundary-color: rgb(11, 34, 133);
+    --tertiary-color: rgb(0, 217, 255);
+    --dark-color: rgb(26, 23, 88);
+}
+
+/*configurações gerais do corpo*/
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    background: linear-gradient(var(--dark-color), var(--secundary-color));
+    opacity: 97%;
+    backdrop-filter: blur(25px);
+    color: var(--primary-color);
+    padding: 0 1rem;
+}
+
+/*personalizando menu superior e logo*/
+.logo {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+/*Fazendo o menu retratil*/
+.hamburger {
+    position: relative;
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    margin: 0 2rem 0 5rem;
+    opacity: 100%;
+}
+
+/*retirando margem que fica na propriedade ul, atrapalha ao expandir o menu*/
+ul {
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+.navbar {
+    list-style: none;
+}
+
+.navoption {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.navoption a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/*personalização especifica do corpo da pagina*/
+.corpo {
+    text-align: justify;
+    margin: 2rem 1rem 2rem 1rem;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#IMGalunos {
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card {
+    background: linear-gradient(var(--dark-color), var(--secundary-color));
+    color: var(--primary-color);
+    border-radius: 1rem;
+    margin: 0.25rem;
+    max-width: 15rem;
+    text-align: center;
+}
+
+/*definindo roda pé*/
+#contato {
+    padding-top: 0.01rem;
+}
+
+footer {
+    background: linear-gradient(var(--dark-color), var(--secundary-color));
+    color: var(--primary-color);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+
+
+
+@media screen and (max-width: 780px) {
+
+    header {
+        max-width: 790px;
+        justify-content: end;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;  
+        margin-left: auto;      
+        z-index: 1;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 0;
+        background: var(--primary-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        clip-path: circle(0 at 90% -15%);
+        transition: 0.5s ease-out;
+        pointer-events: none;
+    }
+
+    /*Menu se abre com uma animação circular*/
+    .navbar.active {
+        clip-path: circle(200% at 90% -15%);
+        pointer-events: all;
+    }
+    /*Fazendo o menu hamburguer mudar de cor ao ser ativado*/
+    .hamburger.active {
+        color: var(--dark-color);
+        display: inline-block;
+        position: static;
+    }
+
+    .navoption a {
+        color: var(--dark-color);
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .descricao {
+        display: grid;
+        justify-items: center;
+    }
+
+    .card {
+        max-width: 20rem;
+    }
+
+    .cards{
+        margin: 2rem 2rem;
+    }
+}
+
+@media screen and (min-width: 781px) {
+
+    body{
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        display: inline-flex;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navoption {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0 1.5rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    .descricao {
+        display: grid;
+        justify-items: center;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 2rem 2rem;
+    }
+
+    .card {
+        max-width: 20rem;
+    }
+
+    .corpo {
+        margin: 1rem 1rem 2rem 1rem;
+    }
+
+}
+
+@media screen and (min-width: 1921px){
+
+     body{
+        font-size: 2.5rem;
+    }
+
+    .descricao{
+        display: flex;
+        
+    }
+
+    .navoption{
+        font-size: 3rem;
+    }
+
+    .logo{
+        font-size: 3.5rem;
+    }
+
+    #IMGalunos {
+        width: 60rem;
+        margin: 1rem 3rem;
+}
+
+    .card{
+        margin: 3rem;
+        max-width: 40rem;
+        max-height: auto;
+    }
+
+    .card img{
+        width: 10rem;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .logo{
+        font-size: 1.5rem;
+        padding: 0 0.7rem;
+        margin: 1rem 0.7rem;
+    }
+
+    .container{
+        height: 4rem;
+    }
+
+    .cards{
+        margin: 0rem 0rem;
+    }
+}
+
