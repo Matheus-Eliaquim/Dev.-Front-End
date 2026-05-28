@@ -14,9 +14,11 @@
 /* Definindo cores base */
 :root {
     --primary-color: rgb(222, 220, 220);
-    --secundary-color: rgb(11, 34, 133);
+    --secundary-color: rgb(80, 4, 146);
     --tertiary-color: rgb(0, 217, 255);
     --dark-color: rgb(26, 23, 88);
+    --dark-color-opacity: rgb(26, 23, 88, 0.85);
+    --secundary-color-opacity: rgba(80, 4, 146, 0.85)
 }
 
 /*configurações gerais do corpo*/
@@ -24,9 +26,8 @@
     display: flex;
     text-align: center;
     justify-content: space-between;
-    background: linear-gradient(var(--dark-color), var(--secundary-color));
-    opacity: 97%;
-    backdrop-filter: blur(25px);
+    background: linear-gradient(var(--dark-color-opacity), var(--secundary-color-opacity));
+    backdrop-filter: blur(5px);
     color: var(--primary-color);
     padding: 0 1rem;
 }
@@ -49,6 +50,9 @@
     font-size: 2rem;
     margin: 0 2rem 0 5rem;
     opacity: 100%;
+    stroke: var(--primary-color);
+    stroke-width: 8px;
+    width: 5rem;
 }
 
 /*retirando margem que fica na propriedade ul, atrapalha ao expandir o menu*/
@@ -137,13 +141,17 @@ footer {
         margin-left: auto;      
         z-index: 1;
     }
+    line{
+        transform-origin: 50% 50%;
+        transition: all 0.3s ease;
+    }
 
     .navbar {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         gap: 0;
-        background: var(--primary-color);
+        background:  linear-gradient(var(--primary-color), var(--secundary-color-opacity));
         position: fixed;
         top: 0;
         left: 0;
@@ -159,11 +167,24 @@ footer {
         clip-path: circle(200% at 90% -15%);
         pointer-events: all;
     }
+
     /*Fazendo o menu hamburguer mudar de cor ao ser ativado*/
     .hamburger.active {
-        color: var(--dark-color);
+        stroke: var(--dark-color);
         display: inline-block;
-        position: static;
+        position: static;        
+    }
+
+    .hamburger.active .linetop{
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .hamburger.active .linemid{
+        display: none;
+    }
+
+    .hamburger.active .linebot{
+        transform: rotate(-45deg) translate(10px, -10px);
     }
 
     .navoption a {
@@ -207,6 +228,12 @@ footer {
         font-weight: bold;
         margin: 0 1.5rem;
     }
+    
+    .navoption:hover{
+        transform: translateY(-10px) scale(1.2);
+        transition: all 0.3s ease;
+        
+    }
 
     .logo {
         font-size: 2.5rem;
@@ -215,6 +242,10 @@ footer {
     header {
         position: sticky;
         top: 0;
+    }
+
+    section{
+        padding: 0 4rem;
     }
 
     .descricao {
@@ -232,6 +263,14 @@ footer {
         max-width: 20rem;
     }
 
+    #tecladoimg{
+        width: 10rem;
+    }
+
+    .card img{
+        width: 7rem;
+    }
+
     .corpo {
         margin: 1rem 1rem 2rem 1rem;
     }
@@ -241,20 +280,20 @@ footer {
 @media screen and (min-width: 1921px){
 
      body{
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
 
-    .descricao{
-        display: flex;
-        
+    section{
+        padding: 0 8rem;
     }
+
 
     .navoption{
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .logo{
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
     #IMGalunos {
@@ -263,13 +302,17 @@ footer {
 }
 
     .card{
-        margin: 3rem;
+        margin: 2rem;
         max-width: 40rem;
         max-height: auto;
     }
 
     .card img{
         width: 10rem;
+    }
+
+    #tecladoimg{
+        width: 15rem;
     }
 
 }
