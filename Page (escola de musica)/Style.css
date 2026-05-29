@@ -141,6 +141,8 @@ footer {
         margin-left: auto;      
         z-index: 1;
     }
+
+    
     line{
         transform-origin: 50% 50%;
         transition: all 0.3s ease;
