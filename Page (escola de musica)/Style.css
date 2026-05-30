@@ -153,7 +153,7 @@ footer {
         flex-direction: column;
         justify-content: space-around;
         gap: 0;
-        background:  linear-gradient(var(--primary-color), var(--secundary-color-opacity));
+        background:  linear-gradient(var(--primary-color), var(--secundary-color));
         position: fixed;
         top: 0;
         left: 0;
