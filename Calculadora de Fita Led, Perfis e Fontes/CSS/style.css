@@ -50,7 +50,7 @@ body {
     background: var(--bodyBGround-color);
     color: var(--fontDark-color);
     font-family: "IBM Plex Serif";
-    background-image: url(/IMG/fitaLedImg.png);
+    background-image: url(../IMG/fitaLedImg.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
