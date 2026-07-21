@@ -7,6 +7,7 @@ Construir uma base sólida em desenvolvimento web, praticando desde a estrutura�
 Cada projeto aqui reflete um passo no meu aprendizado.
 
 🛠️ Tecnologias em foco
+
 HTML5: marcação semântica e organização de conteúdo
 
 CSS3: estilização, responsividade e layout com Flexbox e Grid
