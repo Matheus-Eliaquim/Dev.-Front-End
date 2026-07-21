@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de led</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./JS/main.js" defer></script>
+    <!-- adicionando fontes novas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Calculadora de fitas led, perfis e drivers</h1>
+
+    <header>
+        <section class="dados" id="input">
+            <div class="container">
+                <label>Potencia da fita (W/m): <span class="obrigatorio">*</span><span id="erro"></span></label>
+                <input type="number" id="potenciaFita" required>
+            </div>
+
+
+            <div class="container" id="coeficienteSobra">
+                <label>Coeficiente de segurança (%): </label>
+                <select name="" id="Coeficiente" required>
+                    <option class="seguranca">10</option>
+                    <option class="seguranca">15</option>
+                    <option class="seguranca" selected>20</option>
+                </select>
+            </div>
+
+            <div class="container" id="roloFita">
+                <label>Tamanho do rolo de fita led (metros): </label>
+                <select id="optionRolo" required>
+                    <option class="option">3.00</option>
+                    <option class="option">5.00</option>
+                    <option class="option">10.00</option>
+                    <option class="option">50.00</option>
+                </select>
+            </div>
+
+            <div class="container" id="barPerfil">
+                <label>Tamanho da barra de perfil (metros): </label>
+                <select id="optionPerfil" required>
+                    <option class="option">1.00</option>
+                    <option class="option">1.50</option>
+                    <option class="option">2.00</option>
+                    <option class="option">2.50</option>
+                    <option class="option" selected>3.00</option>
+                </select>
+            </div>
+
+            <div class="container" id="padrãoFonte">
+                <label>Padrão do calculo de fontes (metros): </label>
+                <select id="optionPadraoFonte" required>
+                    <option class="option">6.50</option>
+                    <option class="option" selected>5.00</option>
+                </select>
+            </div>
+        </section>
+
+
+        <section class="dados" id="output">
+            <div class="container">
+                <h4>Total de Barras: </h4>
+                <div id="calculoBarras">
+                    <button id="btnCalculo">Calcular</button>
+                    <p class="outpoutOption" id="outBars">0</p>
+                </div>
+                
+            </div>
+
+            <div class="container">
+                <h4>Total de Rolos: </h4>
+                <p class="outpoutOption" id="outRolos">0</p>
+            </div>
+
+            <div class="container">
+                <h4>Metragem Total: </h4>
+                <p class="outpoutOption" id="outMetros">0</p>
+            </div>
+        </section>
+
+        <section>
+            <h4>Total de Fontes: </h4>
+            <div class="container">
+                <table>
+                    <tr>
+                        <th>Potencia</th>
+                        <th>Quantidade</th>
+                    </tr>
+
+                    <tr>
+                        <td>200W</td>
+                        <td id="fonte200">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>150W</td>
+                        <td id="fonte150">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>100W</td>
+                        <td id="fonte100">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>72W</td>
+                        <td id="fonte72">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>65W</td>
+                        <td id="fonte65">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>60W</td>
+                        <td id="fonte60">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>48W</td>
+                        <td id="fonte48">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>36W</td>
+                        <td id="fonte36">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>24W</td>
+                        <td id="fonte24">0</td>
+                    </tr>
+
+                    <tr>
+                        <td>18W</td>
+                        <td id="fonte18">0</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+    </header>
+
+    <section class="corpoDeDados">
+        <div class="container" id="entradaDeDados">
+            <label>Metragem do segmento:</label>
+            <input type="number" id="entrada">
+            <div class="check" id="checkboxPerfil">
+                <input type="checkbox" name="Sem Perfil" id="semPerfil">
+                <label>S/ perfil</label>
+            </div>
+            <div class="check" id="checkboxFita">
+                <input type="checkbox" name="Sem fita" id="semFita">
+                <label>S/ fita</label>
+            </div>
+        </div>
+
+        <section class="tables">
+            <div id="metragemFontesPerfil">
+                <table id="metragemFontes">
+                    <tr>
+                        <th>Tamanho</th>
+                        <th>Qtd Fontes</th>
+                        <th>Potencia/Tensão</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="cortesPerfil">
+                <table id="cortes">
+                    <tr>
+                        <th>Tamanho</th>
+                        <th>Barras Inteiras</th>
+                        <th>Sobra</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </section>
+
+
+</body>
+
+</html>
