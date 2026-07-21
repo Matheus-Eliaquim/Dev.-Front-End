@@ -1,1 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* retirando a seta do input number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+:root {
+    --bodyFront-color: #383845f0;
+    --bodyBGround-color: #000000;
+    --fontW-color: #c9c9b8;
+    --fontDark-color: #8a8a3b;
+    --border-color: #b4b419;
+    --Destaque-colod: red;
+}
+
+/*fontes novas*/
+
+.tangerine-regular {
+    font-family: "Tangerine", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tangerine-bold {
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.ibm-plex-serif-light {
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+body {
+    background: var(--bodyBGround-color);
+    color: var(--fontDark-color);
+    font-family: "IBM Plex Serif";
+    background-image: url(/IMG/fitaLedImg.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 1rem 4rem 1rem;
+    font-family: "tangerine";
+    font-size: 3.5rem;
+    color: var(--border-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 22rem 4rem 22rem
+}
+
+.container {
+    display: grid;
+    margin-bottom: 1rem;
+}
+
+.dados {
+    max-width: 30rem;
+}
+
+.corpoDeDados {
+    padding: 1rem;
+    margin: 0 25rem 2rem 25rem;
+    background: var(--bodyFront-color);
+    border-radius: 10px;
+    min-height: 40rem;
+}
+
+.corpoDeDados label {
+    color: var(--border-color);
+    font-size: 1.2rem;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-around;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.tables table {
+    min-width: 30rem;
+}
+
+th,
+td {
+    border: var(--border-color) solid 0.1rem;
+    text-align: center;
+}
+
+#cortes td,
+#metragemFontes td {
+    padding: 0.5rem
+}
+
+th {
+    padding: 1rem;
+    color: var(--fontW-color);
+}
+
+#entrada {
+    height: 1.5rem;
+    margin: 1rem 1rem 2rem 1rem;
+    min-width: 30rem;
+}
+
+#entradaDeDados {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.obrigatorio {
+    color: var(--Destaque-colod);
+}
+
+#erro {
+    display: none;
+    color: var(--Destaque-colod);
+}
+
+.check {
+    margin-right: 1rem;
+}
+
+.check label{
+    font-size: 1rem;
+}
+
+#btnCalculo {
+    background: transparent;
+    color: var(--fontDark-color);
+    font-size: 1rem;
+    border: var(--fontDark-color) solid 0.01rem;
+    padding: 0.2rem;
+    margin-left: 2.6rem;
+}
+
+#btnCalculo:active {
+    transform: scale(0.95);
+}
+
+#calculoBarras {
+    display: flex;
+    margin: 0.3rem 0;
+    flex-direction: row-reverse;
+}
+
+
+@media screen and (max-width: 1950px) {
+
+    header {
+        margin: 0 10rem 4rem 10rem
+    }
+
+    .corpoDeDados {
+        margin: 0 5rem 2rem 5rem;
+    }
+
+    .tables table {
+        font-size: 1rem;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+
+    header {
+        margin: 0 3rem 4rem 3rem;
+    }
+
+    #entradaDeDados{
+        display: grid;
+    }
+
+    .tables table{
+        font-size: 0.7rem;
+        min-width: 13rem;
+        min-height: 4rem;
+    }
+
+    .corpoDeDados label{
+        justify-self: center;        
+    }
+}
