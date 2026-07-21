@@ -14,8 +14,7 @@ Este projeto visa a aplicação básica dos meus conhecimentos em **HTML, CSS e 
 
 ## 📌 Observações
 
-- **Compatibilidade**: O projeto possui suporte para dispositivos móveis, notebooks e computadores.  
-- **Status do Projeto**: Não é derivado de um problema real, mas sim uma forma de colocar em prática o que estou aprendendo.  
+- **Compatibilidade**: O projeto possui suporte para dispositivos móveis, notebooks e computadores.   
 - **Estética**: O foco não foi criar um design avançado, mas sim aplicar o conhecimento teórico em algo funcional.  
 
 ---
