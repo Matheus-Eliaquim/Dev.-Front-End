@@ -41,8 +41,8 @@ Na página, o usuário pode configurar:
 - Potência da fita LED.  
 - Tamanho do rolo de fita a ser utilizado.  
 - Tamanho do perfil de alumínio.  
-- Potência de cada fonte.  
-- Quantidade total de fontes necessárias.  
+- Coeficiente de Segurança.  
+- Padrão de distancia para o calculo da quantidade de fontes.  
 
 Assim, o sistema gera os cálculos automaticamente, reduzindo erros e otimizando o tempo de conferência de materiais.  
 
