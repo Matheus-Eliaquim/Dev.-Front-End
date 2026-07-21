@@ -15,8 +15,6 @@ Este projeto tem como objetivo automatizar cálculos relacionados ao uso de fita
 ## 📌 Observações
 
 - **Compatibilidade**: O projeto não possui suporte para dispositivos móveis, pois os usuários que o utilizam trabalham exclusivamente em computadores ou notebooks.  
-- **Status do Projeto**: Ainda não está na versão final, mas já se encontra em uma etapa sólida para demonstrar conhecimentos práticos nas três tecnologias.  
-- **Feedback**: Estou aberto a críticas e sugestões de melhoria, já que meu objetivo é desenvolver habilidades nas tecnologias base para o ambiente web.  
 
 ---
 
